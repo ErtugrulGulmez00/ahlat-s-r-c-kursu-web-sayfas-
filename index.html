@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Özel Öz Ahlat Sürücü Kursu – Ahlat/Bitlis'in köklü sürücü kursu. A, B, C, D sınıfı ehliyet eğitimi, online sınav soruları. 0434 412 65 00">
+  <meta name="keywords" content="Ahlat sürücü kursu, Bitlis ehliyet, Öz Ahlat sürücü kursu, ehliyet soruları, online ehliyet sınavı">
+  <meta property="og:title" content="Özel Öz Ahlat Sürücü Kursu">
+  <meta property="og:description" content="Ahlat'ın güvenilir sürücü kursu. Deneyimli eğitmenler, modern araçlar, yüksek başarı oranı.">
+  <meta property="og:type" content="website">
+  <title>Özel Öz Ahlat Sürücü Kursu | Ahlat / Bitlis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== WhatsApp & Back To Top ===== -->
+<a href="https://wa.me/904344126500" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp ile ulaşın">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="whatsapp-tooltip">WhatsApp'tan Ulaşın</span>
+</a>
+<button id="back-to-top" aria-label="Sayfanın başına dön">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Lightbox -->
+<div id="lightbox-overlay" role="dialog" aria-modal="true">
+  <button id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightbox-img" src="" alt="Galeri fotoğrafı">
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" class="navbar" role="navigation" aria-label="Ana menü">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="images/logo.png" alt="Ahlat Sürücü Kursu" class="nav-logo-img">
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero"       class="nav-link active">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
+        <li><a href="#hizmetler"  class="nav-link">Ehliyet Sınıfları</a></li>
+        <li><a href="#sinav"      class="nav-link">Sınav Soruları</a></li>
+        <li><a href="#galeri"     class="nav-link">Galeri</a></li>
+        <li><a href="#iletisim"   class="nav-link">İletişim</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+904344126500" class="nav-phone">
+          <i class="fa-solid fa-phone"></i>
+          <span class="phone-text">0434 412 65 00</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content" data-animate>
+        <div class="hero-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          Türkiye'nin En Güvenilir Sürücü Kurslarından
+        </div>
+        <h1 class="hero-title">
+          Güvenli Sürüşün
+          <span class="highlight">Ahlat'taki Adresi</span>
+        </h1>
+        <p class="hero-desc">
+          Deneyimli eğitmenlerimiz ve modern araç filomuzla hayalinizdeki ehliyet
+          belgesi için yanınızdayız. Bitlis Ahlat'ın köklü sürücü kursuyla
+          güvenli, kaliteli ve uygun fiyatlı eğitim alın.
+        </p>
+        <div class="hero-actions">
+          <a href="#iletisim" class="btn btn-secondary">
+            <i class="fa-solid fa-pen-to-square"></i> Hemen Kayıt Ol
+          </a>
+          <a href="#sinav" class="btn btn-outline">
+            <i class="fa-solid fa-circle-question"></i> Sınav Sorularını Çöz
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Yıl Deneyim</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">3000+</div>
+            <div class="hero-stat-label">Mezun</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">%97</div>
+            <div class="hero-stat-label">Başarı Oranı</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="images/reklam.png" alt="Ahlat Sürücü Kursu – Güvenle Geleceğe Ulaşın" class="hero-promo-img">
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>↓</span>
+    <span style="font-size:.75rem">Aşağı kaydır</span>
+  </div>
+</section>
+
+<!-- ===== İSTATİSTİK BARI ===== -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-info">
+          <span class="stat-num" data-count="15" data-suffix="+">0</span>
+          <span class="stat-label">Yıl Deneyim</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">👨‍🎓</div>
+        <div class="stat-info">
+          <span class="stat-num" data-count="3000" data-suffix="+">0</span>
+          <span class="stat-label">Mutlu Mezun</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">✅</div>
+        <div class="stat-info">
+          <span class="stat-num" data-count="97" data-suffix="%">0</span>
+          <span class="stat-label">Başarı Oranı</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🚙</div>
+        <div class="stat-info">
+          <span class="stat-num" data-count="20" data-suffix="+">0</span>
+          <span class="stat-label">Modern Araç</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HAKKIMIZDA ===== -->
+<section id="hakkimizda" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual" data-animate>
+        <div class="about-img-wrap">
+          <img src="images/sinif.png" alt="Öz Ahlat Sürücü Kursu Eğitim Sınıfı" class="about-real-img">
+        </div>
+        <div class="about-badge-float">
+          <div class="about-badge-num">15+</div>
+          <div class="about-badge-text">Yıllık Tecrübe</div>
+        </div>
+      </div>
+      <div class="about-text" data-animate data-delay="200">
+        <div class="section-header" style="text-align:left;margin-bottom:1.5rem">
+          <span class="section-tag">Hakkımızda</span>
+          <h2 class="section-title">Ahlat'ın <span>Köklü</span> Sürücü Kursu</h2>
+        </div>
+        <p>
+          Özel Öz Ahlat Motorlu Taşıt Sürücüleri Kursu olarak Bitlis'in Ahlat ilçesinde
+          15 yılı aşkın süredir kaliteli, güvenli ve uygun fiyatlı ehliyet eğitimi sunuyoruz.
+          Binlerce kursiyerimize hem teorik hem de pratik eğitim vererek onları güvenli sürücüler
+          olarak hayata hazırladık.
+        </p>
+        <p>
+          Deneyimli ve sertifikalı eğitmen kadromuz, modern araç filomuz ve müfredata uygun
+          teorik eğitimimizle kursiyerlerimizin başarısını önceliğimiz olarak görüyoruz.
+          Hem teorik sınav hem de direksiyon sınavında yüzde doksan yedinin üzerinde başarı
+          oranımızla bölgenin en başarılı kursu olma unvanını koruyoruz.
+        </p>
+        <div class="about-features">
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i> Deneyimli ve sertifikalı eğitmen kadrosu</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i> Modern ve bakımlı araç filosu</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i> Teorik ve pratik eğitim desteği</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i> Online sınav soruları ve eğitim materyalleri</div>
+          <div class="about-feature"><i class="fa-solid fa-check-circle"></i> Uygun fiyat ve taksit imkânı</div>
+        </div>
+        <a href="#iletisim" class="btn btn-primary">
+          <i class="fa-solid fa-phone"></i> Bize Ulaşın
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EHLİYET SINIFLARI ===== -->
+<section id="hizmetler" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Hizmetlerimiz</span>
+      <h2 class="section-title">Ehliyet <span>Sınıfları</span></h2>
+      <p class="section-desc">İhtiyacınıza uygun ehliyet sınıfı için uzman eğitmenlerimizden kaliteli eğitim alın.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-animate data-delay="100">
+        <div class="service-icon">🚗</div>
+        <div class="service-class">B</div>
+        <h3 class="service-title">Otomobil Ehliyeti</h3>
+        <p class="service-desc">3.500 kg'a kadar otomobil, minibüs ve hafif ticari araç sürüş belgesi.</p>
+        <div class="service-features">
+          <span class="service-tag">En Popüler</span>
+          <span class="service-tag">Manuel & Otomatik</span>
+          <span class="service-tag">Teori + Pratik</span>
+        </div>
+      </div>
+      <div class="service-card" data-animate data-delay="200">
+        <div class="service-icon">🏍️</div>
+        <div class="service-class">A2</div>
+        <h3 class="service-title">Motosiklet Ehliyeti</h3>
+        <p class="service-desc">35 kW'a kadar motosiklet sürme yetkisi. Gençler için ideal başlangıç kategorisi.</p>
+        <div class="service-features">
+          <span class="service-tag">A1 / A2 / A</span>
+          <span class="service-tag">Motosiklet</span>
+          <span class="service-tag">18 yaş +</span>
+        </div>
+      </div>
+      <div class="service-card" data-animate data-delay="300">
+        <div class="service-icon">🚛</div>
+        <div class="service-class">C</div>
+        <h3 class="service-title">Kamyon Ehliyeti</h3>
+        <p class="service-desc">3.500 kg üzeri taşıt sürme ehliyeti. Ticari ve profesyonel sürücüler için.</p>
+        <div class="service-features">
+          <span class="service-tag">C / C1</span>
+          <span class="service-tag">Kamyon</span>
+          <span class="service-tag">21 yaş +</span>
+        </div>
+      </div>
+      <div class="service-card" data-animate data-delay="400">
+        <div class="service-icon">🚌</div>
+        <div class="service-class">D</div>
+        <h3 class="service-title">Otobüs Ehliyeti</h3>
+        <p class="service-desc">9 kişiden fazla yolcu taşımaya yarayan taşıtlar için sürücü belgesi.</p>
+        <div class="service-features">
+          <span class="service-tag">D / D1</span>
+          <span class="service-tag">Otobüs</span>
+          <span class="service-tag">24 yaş +</span>
+        </div>
+      </div>
+      <div class="service-card" data-animate data-delay="200">
+        <div class="service-icon">🚐</div>
+        <div class="service-class">BE</div>
+        <h3 class="service-title">Römork Ehliyeti</h3>
+        <p class="service-desc">B sınıfı araçlarla çekilen, azami kütlesi 3.500 kg'ı aşmayan römork kombinasyonları.</p>
+        <div class="service-features">
+          <span class="service-tag">BE Sınıfı</span>
+          <span class="service-tag">Römork</span>
+          <span class="service-tag">B gerekli</span>
+        </div>
+      </div>
+      <div class="service-card" data-animate data-delay="300">
+        <div class="service-icon">🚜</div>
+        <div class="service-class">F&G</div>
+        <h3 class="service-title">Tarım Araçları</h3>
+        <p class="service-desc">Traktör ve tarımsal amaçlı motorlu araç sürüş belgesi. Çiftçiler için.</p>
+        <div class="service-features">
+          <span class="service-tag">F / G Sınıfı</span>
+          <span class="service-tag">Traktör</span>
+          <span class="service-tag">16 yaş +</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SÜREÇ ===== -->
+<section class="section process-section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Nasıl Çalışır?</span>
+      <h2 class="section-title">Ehliyet Alma <span>Süreciniz</span></h2>
+      <p class="section-desc">Başvurudan ehliyet belgesine kadar tüm süreci birlikte yönetiyoruz.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" data-animate data-delay="100">
+        <div class="step-number">1</div>
+        <div class="step-icon">📋</div>
+        <h3 class="step-title">Başvuru & Kayıt</h3>
+        <p class="step-desc">Kursuma gelerek veya telefonla kaydınızı oluşturun. Gerekli belgelerinizi teslim edin.</p>
+      </div>
+      <div class="process-step" data-animate data-delay="200">
+        <div class="step-number">2</div>
+        <div class="step-icon">📚</div>
+        <h3 class="step-title">Teorik Eğitim</h3>
+        <p class="step-desc">Uzman eğitmenlerle trafik kuralları, motor tekniği ve ilk yardım derslerini alın.</p>
+      </div>
+      <div class="process-step" data-animate data-delay="300">
+        <div class="step-number">3</div>
+        <div class="step-icon">🖥️</div>
+        <h3 class="step-title">Teorik Sınav</h3>
+        <p class="step-desc">Sitemizde pratik yaparak teorik sınavınıza hazırlanın ve sınavı geçin.</p>
+      </div>
+      <div class="process-step" data-animate data-delay="400">
+        <div class="step-number">4</div>
+        <div class="step-icon">🚗</div>
+        <h3 class="step-title">Direksiyon Eğitimi</h3>
+        <p class="step-desc">Modern araçlarımızla deneyimli eğitmenler eşliğinde direksiyon derslerinizi tamamlayın.</p>
+      </div>
+      <div class="process-step" data-animate data-delay="500">
+        <div class="step-number">5</div>
+        <div class="step-icon">🏁</div>
+        <h3 class="step-title">Ehliyet Sınavı</h3>
+        <p class="step-desc">Resmi direksiyon sınavınıza girip başarıyla tamamlayın.</p>
+      </div>
+      <div class="process-step" data-animate data-delay="200">
+        <div class="step-number">6</div>
+        <div class="step-icon">🎉</div>
+        <h3 class="step-title">Ehliyet Teslimi</h3>
+        <p class="step-desc">Ehliyet belgenizi alarak trafiğe çıkın! Güvenli sürüşler dileriz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEDEN BİZ ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Neden Öz Ahlat?</span>
+      <h2 class="section-title">Bizi <span>Tercih Etmeniz</span> İçin Sebepler</h2>
+      <p class="section-desc">Kursiyerlerimizin memnuniyeti ve başarısı için durmadan çalışıyoruz.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" data-animate data-delay="100">
+        <div class="feature-icon-wrap">👨‍🏫</div>
+        <div>
+          <h4 class="feature-title">Deneyimli Eğitmenler</h4>
+          <p class="feature-desc">Yıllarca tecrübe sahibi, sertifikalı ve sabırlı eğitmenlerimiz her kursiyere ayrı ilgi gösterir.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-animate data-delay="200">
+        <div class="feature-icon-wrap">🚙</div>
+        <div>
+          <h4 class="feature-title">Modern Araç Filosu</h4>
+          <p class="feature-desc">Düzenli bakımı yapılan, yeni model manuel ve otomatik araçlarla güvenli sürüş pratiği yapın.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-animate data-delay="300">
+        <div class="feature-icon-wrap">📊</div>
+        <div>
+          <h4 class="feature-title">Yüksek Başarı Oranı</h4>
+          <p class="feature-desc">%97 oranında başarıyla sınıfı geçen kursiyerlerimizle bölgenin en başarılı kursu unvanını taşıyoruz.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-animate data-delay="100">
+        <div class="feature-icon-wrap">💰</div>
+        <div>
+          <h4 class="feature-title">Uygun Fiyat & Taksit</h4>
+          <p class="feature-desc">Bölgenin en rekabetçi fiyatları ve taksit imkânıyla ehliyet hedefinize kolayca ulaşın.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-animate data-delay="200">
+        <div class="feature-icon-wrap">🖥️</div>
+        <div>
+          <h4 class="feature-title">Online Sınav Desteği</h4>
+          <p class="feature-desc">70 soruluk soru bankamızla teorik sınavınıza her an, her yerden çalışın ve hazırlıklı gidin.</p>
+        </div>
+      </div>
+      <div class="feature-card" data-animate data-delay="300">
+        <div class="feature-icon-wrap">📍</div>
+        <div>
+          <h4 class="feature-title">Merkezi Konum</h4>
+          <p class="feature-desc">Ahlat merkezinde, ulaşımı kolay konumuyla size en yakın sürücü kursu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SINAV BÖLÜMÜ ===== -->
+<section id="sinav" class="section exam-section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Online Eğitim</span>
+      <h2 class="section-title" style="color:#fff">Ehliyet <span>Sınav Soruları</span></h2>
+      <p class="section-desc">70 soruluk soru bankamızla sınavınıza hazırlanın. Deneme sınavı veya konu bazlı pratik yapın.</p>
+    </div>
+
+    <!-- SINAV ANA SAYFASI -->
+    <div id="exam-home">
+      <div class="exam-modes">
+        <!-- Deneme Sınavı -->
+        <div class="exam-mode-card">
+          <div class="mode-icon">⏱️</div>
+          <h3 class="mode-title">Deneme Sınavı</h3>
+          <p class="mode-desc">Gerçek sınav formatında 45 soru, 40 dakika. Tüm konulardan karışık sorular.</p>
+          <div class="mode-tags">
+            <span class="mode-tag">45 Soru</span>
+            <span class="mode-tag">40 Dakika</span>
+            <span class="mode-tag">Geçme: %70</span>
+            <span class="mode-tag">Karışık Konu</span>
+          </div>
+          <button class="btn btn-secondary" id="btn-start-mock">
+            <i class="fa-solid fa-play"></i> Sınavı Başlat
+          </button>
+        </div>
+
+        <!-- Konu Bazlı Pratik -->
+        <div class="exam-mode-card">
+          <div class="mode-icon">📖</div>
+          <h3 class="mode-title">Konu Bazlı Pratik</h3>
+          <p class="mode-desc">İstediğiniz konudan soru çözün, yanlış cevaplarınızın açıklamasını hemen görün.</p>
+          <div class="mode-tags">
+            <span class="mode-tag">4 Kategori</span>
+            <span class="mode-tag">Süresiz</span>
+            <span class="mode-tag">Anında Açıklama</span>
+          </div>
+          <div class="exam-categories">
+            <p class="categories-title">Konu Seçin:</p>
+            <div class="cat-grid">
+              <button class="cat-btn" data-start-practice="all">
+                <i class="fa-solid fa-layer-group"></i> Tüm Konular
+              </button>
+              <button class="cat-btn" data-start-practice="traffic">
+                <i class="fa-solid fa-traffic-light"></i> Trafik ve Çevre
+              </button>
+              <button class="cat-btn" data-start-practice="engine">
+                <i class="fa-solid fa-gear"></i> Motor ve Araç Tekniği
+              </button>
+              <button class="cat-btn" data-start-practice="firstaid">
+                <i class="fa-solid fa-kit-medical"></i> İlk Yardım
+              </button>
+              <button class="cat-btn" data-start-practice="etiquette">
+                <i class="fa-solid fa-handshake"></i> Trafik Adabı
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sınav Hakkında Bilgi -->
+      <div style="text-align:center;padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;max-width:700px;margin:0 auto;">
+        <p style="color:rgba(255,255,255,.5);font-size:.9rem;line-height:1.8;">
+          <i class="fa-solid fa-circle-info" style="color:var(--secondary);margin-right:.5rem;"></i>
+          Gerçek ehliyet teorik sınavı 50 soru / 40 dakikadan oluşmakta olup geçme notu %70'tir.
+          Sitemizde çözülen sorular bilgi amaçlı olup güncel mevzuata göre hazırlanmıştır.
+        </p>
+      </div>
+    </div>
+
+    <!-- SINAV QUIZ -->
+    <div id="exam-quiz">
+      <!-- Başlık -->
+      <div class="quiz-header">
+        <div class="quiz-meta">
+          <span id="exam-category-tag">Kategori</span>
+          <span id="exam-question-num">Soru 1 / 45</span>
+        </div>
+        <div id="timer-row">
+          <i class="fa-regular fa-clock" style="color:rgba(255,255,255,.5)"></i>
+          <div class="exam-timer" id="exam-timer">40:00</div>
+        </div>
+        <button id="btn-cancel-exam">
+          <i class="fa-solid fa-xmark"></i> Sınavı İptal Et
+        </button>
+      </div>
+
+      <!-- İlerleme Çubuğu -->
+      <div class="progress-wrap">
+        <div id="exam-progress-bar" style="width:0%"></div>
+      </div>
+
+      <!-- Soru -->
+      <div class="quiz-body">
+        <p id="exam-question-text">Soru metni buraya gelecek...</p>
+        <div id="exam-options"></div>
+        <div id="exam-explanation"></div>
+      </div>
+
+      <!-- Alt Menü -->
+      <div class="quiz-footer">
+        <button id="btn-prev"><i class="fa-solid fa-chevron-left"></i> Önceki</button>
+        <span style="color:rgba(255,255,255,.3);font-size:.85rem">İlerleme kaydedilir</span>
+        <button id="btn-next">Sonraki <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- SINAV SONUÇLARI -->
+    <div id="exam-results">
+      <div class="results-card">
+        <h3 style="font-family:var(--font-head);color:#fff;font-size:1.5rem;margin-bottom:2rem;font-weight:800;">Sınav Sonuçlarınız</h3>
+        <div class="score-circle-wrap">
+          <div id="score-circle">
+            <div id="result-score">-/-</div>
+            <div id="result-pct">%0</div>
+          </div>
+        </div>
+        <div id="result-badge" class="result-badge">...</div>
+        <div class="result-meta">
+          <span><i class="fa-regular fa-clock"></i> <span id="result-time">-</span></span>
+          <span><i class="fa-solid fa-circle-check"></i> Geçme notu: %70</span>
+        </div>
+        <h4 class="result-categories-title">Konu Bazlı Performans:</h4>
+        <div id="result-categories"></div>
+        <div class="results-actions">
+          <button id="btn-retry"><i class="fa-solid fa-rotate-right"></i> Tekrar Dene</button>
+          <button id="btn-back-menu"><i class="fa-solid fa-house"></i> Ana Menüye Dön</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== GALERİ ===== -->
+<section id="galeri" class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Galeri</span>
+      <h2 class="section-title">Kurumuza <span>Bir Bakış</span></h2>
+      <p class="section-desc">Eğitim ortamımızı ve modern araç filomuzdan kareler.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- 1 – Tanıtım Posteri (geniş) -->
+      <div class="gallery-item" data-animate data-src="images/reklam.png" data-caption="Van Gölü'nde Güvenli Sürüş">
+        <img src="images/reklam.png" alt="Ahlat Sürücü Kursu Tanıtım" class="gallery-img">
+        <div class="gallery-caption">Van Gölü'nde Güvenli Sürüş – Ahlat'tan Yollara Güvenle…</div>
+      </div>
+      <!-- 2 – Eğitim Sınıfı -->
+      <div class="gallery-item" data-animate data-delay="100" data-src="images/sinif.png" data-caption="Teorik Eğitim Sınıfımız">
+        <img src="images/sinif.png" alt="Teorik Eğitim Sınıfı" class="gallery-img">
+        <div class="gallery-caption">Trafik İşaretleriyle Donatılmış Teorik Eğitim Sınıfımız</div>
+      </div>
+      <!-- 3 – Sınav Aracı -->
+      <div class="gallery-item" data-animate data-delay="200" data-src="images/araba-sinav.png" data-caption="Pratik Sürüş ve Sınav Eğitimi">
+        <img src="images/araba-sinav.png" alt="Sınav Aracı Yolda" class="gallery-img">
+        <div class="gallery-caption">Gerçek Yolda Pratik Sürüş ve Direksiyon Sınavı</div>
+      </div>
+      <!-- 4 – Kamyon (geniş) -->
+      <div class="gallery-item" data-animate data-delay="100" data-src="images/kamyon.png" data-caption="C Sınıfı Kamyon Eğitimi">
+        <img src="images/kamyon.png" alt="Kamyon Eğitim Aracı" class="gallery-img">
+        <div class="gallery-caption">C Sınıfı Kamyon – Ağır Vasıta Eğitim Filomuz</div>
+      </div>
+      <!-- 5 – Simülatör -->
+      <div class="gallery-item" data-animate data-delay="200" data-src="images/simulator.png" data-caption="Simülatör Eğitimi">
+        <img src="images/simulator.png" alt="Sürüş Simülatörü" class="gallery-img">
+        <div class="gallery-caption">Modern Sürüş Simülatörü ile Güvenli Ön Pratik</div>
+      </div>
+      <!-- 6 – Sınıf (farklı açı) -->
+      <div class="gallery-item" data-animate data-delay="300" data-src="images/sinif.png" data-caption="Donanımlı Eğitim Ortamı">
+        <img src="images/sinif.png" alt="Eğitim Ortamı" class="gallery-img" style="object-position:bottom;">
+        <div class="gallery-caption">Konforlu ve Donanımlı Eğitim Ortamımız</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== YORUMLAR ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Kursiyerlerimiz Ne Diyor?</span>
+      <h2 class="section-title">Başarı <span>Hikayeleri</span></h2>
+      <p class="section-desc">Kursiyerlerimizin deneyimlerini kendi ağızlarından dinleyin.</p>
+    </div>
+    <div class="testimonials-wrap" data-animate>
+      <div id="testimonials-track">
+
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Öz Ahlat Sürücü Kursu'nda eğitim aldım ve ilk denemede teorik sınavımı geçtim. Eğitmenler çok sabırlı ve anlayışlı, hiç sıkılmadan öğrendim. Herkese tavsiye ederim!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AK</div>
+              <div>
+                <div class="author-name">Ahmet K.</div>
+                <div class="author-detail">B Sınıfı Ehliyet · Ahlat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Kız kardeşim ve ben aynı dönemde kayıt olduk, ikimiz de direksiyon sınavından ilk seferde geçtik! Araçlar çok temiz ve bakımlıydı, eğitmenimiz Mehmet Bey de harika biriydi."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">FK</div>
+              <div>
+                <div class="author-name">Fatma K.</div>
+                <div class="author-detail">B Sınıfı Ehliyet · Ahlat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Siteyi çok sevdim, özellikle online sınav soruları bölümü çok işe yaradı. Evden çalışarak sınava hazırlandım ve tam puan aldım. Bu tür destekler gerçekten değerli!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MY</div>
+              <div>
+                <div class="author-name">Mustafa Y.</div>
+                <div class="author-detail">B Sınıfı Ehliyet · Tatvan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">★★★★☆</div>
+            <p class="testimonial-text">"Uygun fiyat ve kaliteli eğitim. Teorik derslerde anlatım çok açık ve anlaşılırdı. Direksiyon eğitiminde de eğitmenimiz çok yardımcı oldu. Kesinlikle tavsiye ediyorum."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">ZA</div>
+              <div>
+                <div class="author-name">Zeynep A.</div>
+                <div class="author-detail">B Sınıfı Ehliyet · Ahlat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-inner">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"C sınıfı ehliyet için başvurdum, teorik ve uygulamalı eğitimden çok memnun kaldım. Profesyonel bir kadro, düzenli müfredat. Sürücü kursu seçerken doğru adresi bulduğumu düşünüyorum."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">İD</div>
+              <div>
+                <div class="author-name">İbrahim D.</div>
+                <div class="author-detail">C Sınıfı Ehliyet · Bitlis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="testimonials-controls">
+      <button id="testimonials-prev" aria-label="Önceki yorum"><i class="fa-solid fa-chevron-left"></i></button>
+      <button id="testimonials-next" aria-label="Sonraki yorum"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SSS ===== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">Sıkça Sorulan Sorular</span>
+      <h2 class="section-title">Merak <span>Ettikleriniz</span></h2>
+    </div>
+    <div class="faq-list" data-animate>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Kayıt için hangi belgeler gereklidir?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Kayıt için nüfus cüzdanı fotokopisi, ikametgah belgesi, sağlık raporu (anlaşmalı sağlık kuruluşlarından), ve pasaport fotoğrafı gerekmektedir. Detaylı bilgi için lütfen kursla iletişime geçin.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Ehliyet kursu ne kadar sürer?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            B sınıfı ehliyet için teorik eğitim yaklaşık 2-3 ay, direksiyon eğitimi ise yasal saatler tamamlanana kadar devam eder. Toplam süreç kişiden kişiye değişmekle birlikte ortalama 3-4 ay olarak planlanmaktadır.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Taksitle ödeme yapabilir miyim?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Evet, kursiyerlerimize taksit imkânı sunmaktayız. Detaylı ödeme planları ve güncel fiyatlarımız için kursu arayabilir ya da bizzat ziyaret edebilirsiniz.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Teorik sınav kaç sorudan oluşuyor ve geçme notu nedir?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Teorik ehliyet sınavı 50 sorudan oluşmaktadır ve 40 dakika süre verilmektedir. Geçme notu %70 yani 35/50 doğrudur. Sitemizin sınav soruları bölümünden bol bol pratik yapabilirsiniz.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Direksiyon sınavında başarısız olursam ne olur?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Direksiyon sınavında başarısız olunması durumunda ek direksiyon saatleri alarak tekrar sınava girebilirsiniz. Eğitmenlerimiz sınav öncesi yoğun pratik desteği sunar.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Minimum yaş sınırı nedir?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            B sınıfı (otomobil) ehliyet için minimum yaş 17'dir; sınava 17 yaşında girebilir ancak ehliyet belgesi 18 yaşında teslim edilir. A2 sınıfı (motosiklet) için 18, C sınıfı için 21, D sınıfı için 24 yaş şartı aranmaktadır.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Yabancı ülkeden alınan ehliyet dönüştürülebilir mi?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Anlaşmalı ülkelerden alınan ehliyet belgeleri belirli koşullar dahilinde Türk ehliyetine dönüştürülebilmektedir. Bu konuda danışmanlık almak için kursla iletişime geçmenizi öneririz.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== İLETİŞİM ===== -->
+<section id="iletisim" class="section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-tag">İletişim</span>
+      <h2 class="section-title">Bize <span>Ulaşın</span></h2>
+      <p class="section-desc">Sorularınız için bizi arayabilir, mesaj gönderebilir veya kursuma bizzat gelebilirsiniz.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Sol: Bilgiler + Harita -->
+      <div data-animate>
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-label">Adres</div>
+              <div class="contact-value">Erkizan Mah. Mazlum Yegül Cad.<br>Taha 2 Ap. No:309 Ahlat / BİTLİS</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-label">Telefon</div>
+              <div class="contact-value">
+                <a href="tel:+904344126500">0434 412 65 00</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-value">
+                <a href="https://wa.me/904344126500" target="_blank" rel="noopener">0434 412 65 00</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="contact-label">Çalışma Saatleri</div>
+              <div class="contact-value">Hafta içi: 08:00 – 18:00<br>Cumartesi: 09:00 – 14:00</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div>
+              <div class="contact-label">Sosyal Medya</div>
+              <div class="contact-value">
+                <div class="social-links">
+                  <a href="https://www.instagram.com/ozelozahlatsurucukursu/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://wa.me/904344126500" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                  <a href="tel:+904344126500" class="social-link" aria-label="Telefon">
+                    <i class="fa-solid fa-phone"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            title="Öz Ahlat Sürücü Kursu Haritası"
+            src="https://maps.google.com/maps?q=Erkizan+Mahallesi+Ahlat+Bitlis+Turkey&output=embed&z=14"
+            width="100%" height="280" frameborder="0"
+            style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Sağ: Form -->
+      <div data-animate data-delay="200">
+        <div class="contact-form-card">
+          <h3 class="form-title">Bilgi & Kayıt Formu</h3>
+          <p id="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            Mesajınız iletildi! En kısa sürede sizi arayacağız.
+          </p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-name">Ad</label>
+                <input class="form-input" id="f-name" type="text" placeholder="Adınız" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-surname">Soyad</label>
+                <input class="form-input" id="f-surname" type="text" placeholder="Soyadınız" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-phone">Telefon</label>
+              <input class="form-input" id="f-phone" type="tel" placeholder="05XX XXX XX XX" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-license">İlgilendiğiniz Ehliyet Sınıfı</label>
+              <select class="form-select" id="f-license">
+                <option value="">Seçiniz...</option>
+                <option>B Sınıfı – Otomobil</option>
+                <option>A / A2 Sınıfı – Motosiklet</option>
+                <option>C Sınıfı – Kamyon</option>
+                <option>D Sınıfı – Otobüs</option>
+                <option>BE Sınıfı – Römork</option>
+                <option>F / G Sınıfı – Tarım Araçları</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-message">Mesajınız</label>
+              <textarea class="form-textarea" id="f-message" placeholder="Soru veya notlarınız..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;border-radius:12px;">
+              <i class="fa-solid fa-paper-plane"></i> Gönder – Sizi Arayalım
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-wrap">
+          <img src="images/logo.png" alt="Ahlat Sürücü Kursu" class="footer-logo-img">
+        </div>
+        <p class="footer-about">
+          Bitlis Ahlat'ta 15 yılı aşkın tecrübesiyle kursiyerlerimize kaliteli ve güvenli
+          ehliyet eğitimi sunuyoruz. Güvenli sürüşün adresi.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/ozelozahlatsurucukursu/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/904344126500" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="tel:+904344126500" aria-label="Telefon">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hızlı Bağlantılar</h4>
+        <div class="footer-links">
+          <a href="#hero">Ana Sayfa</a>
+          <a href="#hakkimizda">Hakkımızda</a>
+          <a href="#hizmetler">Ehliyet Sınıfları</a>
+          <a href="#sinav">Sınav Soruları</a>
+          <a href="#galeri">Galeri</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ehliyet Sınıfları</h4>
+        <div class="footer-links">
+          <a href="#hizmetler">B Sınıfı – Otomobil</a>
+          <a href="#hizmetler">A/A2 Sınıfı – Motosiklet</a>
+          <a href="#hizmetler">C Sınıfı – Kamyon</a>
+          <a href="#hizmetler">D Sınıfı – Otobüs</a>
+          <a href="#hizmetler">BE Sınıfı – Römork</a>
+          <a href="#hizmetler">F/G Sınıfı – Tarım</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Erkizan Mah. Mazlum Yegül Cad. No:309, Ahlat / BİTLİS</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+904344126500" style="color:inherit">0434 412 65 00</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Hft. İçi 08:00–18:00<br>Cumartesi 09:00–14:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Özel Öz Ahlat Sürücü Kursu. Tüm hakları saklıdır.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Gizlilik Politikası</a>
+        <a href="#">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/questions.js"></script>
+<script src="js/exam.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
