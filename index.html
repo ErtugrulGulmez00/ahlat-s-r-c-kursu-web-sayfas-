@@ -343,97 +343,8 @@
   </div>
 </section>
 
-<!-- ===== YORUMLAR ===== -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Başarı Hikayeleri</h2>
-      <p class="section-desc">Kursiyerlerimizin deneyimlerini kendi ağızlarından dinleyin.</p>
-    </div>
-    <div class="testimonials-wrap">
-      <div id="testimonials-track">
-
-        <div class="testimonial-card">
-          <div class="testimonial-inner">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"Öz Ahlat Sürücü Kursu'nda eğitim aldım ve ilk denemede teorik sınavımı geçtim. Eğitmenler çok sabırlı ve anlayışlı, hiç sıkılmadan öğrendim. Herkese tavsiye ederim!"</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">AK</div>
-              <div>
-                <div class="author-name">Ahmet K.</div>
-                <div class="author-detail">B Sınıfı Ehliyet · Ahlat</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-inner">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"Kız kardeşim ve ben aynı dönemde kayıt olduk, ikimiz de direksiyon sınavından ilk seferde geçtik! Araçlar çok temiz ve bakımlıydı, eğitmenimiz Mehmet Bey de harika biriydi."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">FK</div>
-              <div>
-                <div class="author-name">Fatma K.</div>
-                <div class="author-detail">B Sınıfı Ehliyet · Ahlat</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-inner">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"Siteyi çok sevdim, özellikle online sınav soruları bölümü çok işe yaradı. Evden çalışarak sınava hazırlandım ve tam puan aldım. Bu tür destekler gerçekten değerli!"</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">MY</div>
-              <div>
-                <div class="author-name">Mustafa Y.</div>
-                <div class="author-detail">B Sınıfı Ehliyet · Tatvan</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-inner">
-            <div class="testimonial-stars">★★★★☆</div>
-            <p class="testimonial-text">"Uygun fiyat ve kaliteli eğitim. Teorik derslerde anlatım çok açık ve anlaşılırdı. Direksiyon eğitiminde de eğitmenimiz çok yardımcı oldu. Kesinlikle tavsiye ediyorum."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">ZA</div>
-              <div>
-                <div class="author-name">Zeynep A.</div>
-                <div class="author-detail">B Sınıfı Ehliyet · Ahlat</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-inner">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"C sınıfı ehliyet için başvurdum, teorik ve uygulamalı eğitimden çok memnun kaldım. Profesyonel bir kadro, düzenli müfredat. Sürücü kursu seçerken doğru adresi bulduğumu düşünüyorum."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">İD</div>
-              <div>
-                <div class="author-name">İbrahim D.</div>
-                <div class="author-detail">C Sınıfı Ehliyet · Bitlis</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="testimonials-controls">
-      <button id="testimonials-prev" aria-label="Önceki yorum"><i class="fa-solid fa-chevron-left"></i></button>
-      <button id="testimonials-next" aria-label="Sonraki yorum"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-  </div>
-</section>
-
 <!-- ===== SSS ===== -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Merak Ettikleriniz</h2>
@@ -529,7 +440,7 @@
 </section>
 
 <!-- ===== İLETİŞİM ===== -->
-<section id="iletisim" class="section">
+<section id="iletisim" class="section section-alt">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Bize Ulaşın</h2>
@@ -610,10 +521,8 @@
       <div>
         <div class="contact-form-card">
           <h3 class="form-title">Bilgi & Kayıt Formu</h3>
-          <p id="form-success">
-            <i class="fa-solid fa-circle-check"></i>
-            Mesajınız iletildi! En kısa sürede sizi arayacağız.
-          </p>
+          <p class="form-intro">Formu doldurun, "Gönder"e basınca mesajınız WhatsApp'ta hazır açılır. Tek yapmanız gereken göndermek.</p>
+          <p id="form-error" role="alert"></p>
           <form id="contact-form" novalidate>
             <div class="form-row">
               <div class="form-group">
@@ -644,8 +553,12 @@
               <textarea class="form-textarea" id="f-message" placeholder="Soru veya notlarınız..." rows="4"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;border-radius:12px;">
-              <i class="fa-solid fa-paper-plane"></i> Gönder – Sizi Arayalım
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp ile gönder
             </button>
+            <p class="form-kvkk">
+              Paylaştığınız bilgiler yalnızca size dönüş yapmak için kullanılır.
+              <a href="gizlilik.html">KVKK Aydınlatma Metni</a>
+            </p>
           </form>
         </div>
       </div>
@@ -720,10 +633,9 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© 2025 Özel Öz Ahlat Sürücü Kursu. Tüm hakları saklıdır.</span>
+      <span>© <span id="year">2026</span> Özel Öz Ahlat Sürücü Kursu. Tüm hakları saklıdır.</span>
       <div class="footer-bottom-links">
-        <a href="#">Gizlilik Politikası</a>
-        <a href="#">Kullanım Koşulları</a>
+        <a href="gizlilik.html">KVKK Aydınlatma Metni</a>
       </div>
     </div>
   </div>

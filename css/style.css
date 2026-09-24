@@ -585,50 +585,6 @@ ul { list-style: none; }
 #lightbox-caption { color: rgba(255,255,255,.7); font-size: .9rem; }
 
 /* ============================================================
-   YORUMLAR
-   ============================================================ */
-.testimonials-wrap { position: relative; overflow: hidden; }
-#testimonials-track {
-  display: flex; transition: transform .5s ease;
-}
-.testimonial-card {
-  flex: 0 0 33.333%; padding: 0 .75rem;
-}
-.testimonial-inner {
-  background: var(--white); border: 1px solid var(--gray-light);
-  border-radius: var(--radius-lg);
-  padding: 2rem; height: 100%;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-.testimonial-inner:hover { box-shadow: var(--shadow-lg); border-color: var(--secondary); }
-
-.testimonial-stars { color: var(--secondary); font-size: 1.1rem; margin-bottom: 1rem; }
-.testimonial-text  { color: var(--gray-mid); font-style: italic; margin-bottom: 1.5rem; line-height: 1.7; }
-.testimonial-author { display: flex; align-items: center; gap: .75rem; }
-.author-avatar {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--primary);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--white);
-  flex-shrink: 0;
-}
-.author-name   { font-weight: 700; color: var(--dark); font-size: .95rem; }
-.author-detail { font-size: .8rem; color: var(--gray-mid); }
-
-.testimonials-controls {
-  display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;
-}
-.testimonials-controls button {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--primary); color: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  transition: var(--transition);
-}
-.testimonials-controls button:hover:not(:disabled) { background: var(--secondary); color: var(--white); }
-.testimonials-controls button:disabled { opacity: .35; cursor: not-allowed; }
-
-/* ============================================================
    SSS
    ============================================================ */
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: .75rem; }
@@ -717,12 +673,16 @@ ul { list-style: none; }
 .form-textarea { resize: vertical; min-height: 110px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-#form-success {
+.form-intro { color: var(--gray-mid); font-size: .95rem; margin: -1rem 0 1.5rem; }
+#form-error {
   display: none;
-  background: rgba(22,163,74,.1); border: 1px solid #16a34a;
-  color: #15803d; border-radius: var(--radius);
-  padding: 1rem 1.25rem; margin-bottom: 1rem; font-weight: 600;
+  background: rgba(220,38,38,.08); border: 1px solid var(--danger);
+  color: #b91c1c; border-radius: var(--radius);
+  padding: .85rem 1.1rem; margin-bottom: 1rem; font-weight: 600;
 }
+.form-input.invalid { border-color: var(--danger); }
+.form-kvkk { color: var(--gray-mid); font-size: .85rem; margin-top: 1rem; line-height: 1.6; }
+.form-kvkk a { color: var(--dark); font-weight: 700; text-decoration: underline; }
 @keyframes slideIn { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:none; } }
 
 /* ============================================================
@@ -872,8 +832,6 @@ ul { list-style: none; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .gallery-item:nth-child(1),
   .gallery-item:nth-child(4) { grid-column: span 2; }
-
-  .testimonial-card { flex: 0 0 100%; }
   .footer-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .result-cat-item { grid-template-columns: 1fr; gap: .3rem; }
@@ -891,3 +849,21 @@ ul { list-style: none; }
   .gallery-item:nth-child(4) { grid-column: span 1; }
   .results-actions { flex-direction: column; }
 }
+
+/* ============================================================
+   KVKK / YASAL SAYFA
+   ============================================================ */
+.legal-header { background: var(--dark); padding: 1rem 0; }
+.legal-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.legal-logo { height: 48px; width: auto; }
+.legal-back { color: rgba(255,255,255,.8); font-weight: 600; padding: .6rem 0; }
+.legal-back:hover { color: var(--white); }
+.legal { max-width: 760px; padding-top: 3rem; padding-bottom: 4rem; }
+.legal h1 { font-family: var(--font-head); font-weight: 800; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; color: var(--dark); margin-bottom: .5rem; }
+.legal-updated { color: var(--gray-mid); font-size: .9rem; margin-bottom: 2rem; }
+.legal h2 { font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; color: var(--dark); margin: 2.25rem 0 .6rem; }
+.legal p, .legal li { color: var(--gray); margin-bottom: .75rem; }
+.legal ul { list-style: disc; padding-left: 1.4rem; margin-bottom: .75rem; }
+.legal li { margin-bottom: .35rem; }
+.legal a { color: var(--secondary); font-weight: 600; }
+.legal-footer { background: var(--dark); color: rgba(255,255,255,.6); padding: 1.5rem 0; font-size: .9rem; }

@@ -5,13 +5,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   initImageFallbacks();
   initNavbar();
-  initTestimonials();
   initFAQ();
   initGallery();
   initBackToTop();
   initContactForm();
   initMobileMenu();
   initPlayLinks();
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 });
 
 // ---------- NAVBAR ----------
@@ -74,48 +75,6 @@ function closeMenu() {
   const navMenu   = document.getElementById('nav-menu');
   if (navMenu) navMenu.classList.remove('open');
   if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); }
-}
-
-// ---------- KAYDIRMALı YORUMLAR ----------
-function initTestimonials() {
-  const track   = document.getElementById('testimonials-track');
-  const prevBtn = document.getElementById('testimonials-prev');
-  const nextBtn = document.getElementById('testimonials-next');
-  if (!track) return;
-
-  const cards = track.querySelectorAll('.testimonial-card');
-  let index = 0;
-
-  function getVisible() {
-    if (window.innerWidth >= 992) return 3;
-    if (window.innerWidth >= 600) return 2;
-    return 1;
-  }
-
-  function update() {
-    const visible = getVisible();
-    const maxIndex = Math.max(0, cards.length - visible);
-    index = Math.min(index, maxIndex);
-    const w = 100 / visible;
-    cards.forEach(c => { c.style.flex = `0 0 ${w}%`; });
-    track.style.transform = `translateX(-${index * w}%)`;
-    if (prevBtn) prevBtn.disabled = index === 0;
-    if (nextBtn) nextBtn.disabled = index >= maxIndex;
-  }
-
-  if (prevBtn) prevBtn.addEventListener('click', () => { index = Math.max(0, index - 1); update(); });
-  if (nextBtn) nextBtn.addEventListener('click', () => { index++; update(); });
-
-  window.addEventListener('resize', update);
-  update();
-
-  // otomatik kaydırma
-  setInterval(() => {
-    const visible = getVisible();
-    const maxIndex = Math.max(0, cards.length - visible);
-    index = index >= maxIndex ? 0 : index + 1;
-    update();
-  }, 5000);
 }
 
 // ---------- SSS AKORDEON ----------
@@ -188,33 +147,52 @@ function initBackToTop() {
 }
 
 // ---------- İLETİŞİM FORMU ----------
+// Form bir sunucuya gitmez; doldurulan bilgilerle WhatsApp'ta hazır bir mesaj açar.
+const WHATSAPP_NUMBER = '904344126500';
+
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
+  const err = document.getElementById('form-error');
+  const field = id => document.getElementById(id);
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
+    const name    = field('f-name').value.trim();
+    const surname = field('f-surname').value.trim();
+    const phone   = field('f-phone').value.trim();
+    const license = field('f-license').value;
+    const message = field('f-message').value.trim();
 
-    btn.textContent = 'Gönderiliyor...';
-    btn.disabled = true;
+    const missing = [];
+    [['f-name', name], ['f-surname', surname]].forEach(([id, v]) => {
+      field(id).classList.toggle('invalid', !v);
+      if (!v) missing.push(id);
+    });
+    const phoneOk = phone.replace(/\D/g, '').length >= 10;
+    field('f-phone').classList.toggle('invalid', !phoneOk);
 
-    setTimeout(() => {
-      showFormSuccess();
-      form.reset();
-      btn.textContent = originalText;
-      btn.disabled = false;
-    }, 1200);
+    if (missing.length || !phoneOk) {
+      err.textContent = !phoneOk && !missing.length
+        ? 'Lütfen geçerli bir telefon numarası yazın.'
+        : 'Lütfen ad, soyad ve telefon alanlarını doldurun.';
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+
+    const lines = [
+      'Merhaba, web sitenizden yazıyorum.',
+      '',
+      'Ad Soyad: ' + name + ' ' + surname,
+      'Telefon: ' + phone,
+    ];
+    if (license) lines.push('İlgilendiğim sınıf: ' + license);
+    if (message) lines.push('', message);
+
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+    window.open(url, '_blank', 'noopener');
   });
-}
-
-function showFormSuccess() {
-  const el = document.getElementById('form-success');
-  if (!el) return;
-  el.style.display = 'block';
-  el.style.animation = 'slideIn 0.4s ease';
-  setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
 
 // ---------- PLAY STORE LİNKİ ----------
