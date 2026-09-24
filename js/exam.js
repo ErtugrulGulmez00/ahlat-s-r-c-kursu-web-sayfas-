@@ -16,19 +16,13 @@ const ExamApp = (() => {
     practiceShowAnswer: false
   };
 
-  const MOCK_TOTAL = 45;
-  const MOCK_TIME  = 40 * 60; // 40 dakika
+  const MOCK_TOTAL = 50;
+  const MOCK_TIME  = 45 * 60; // 45 dakika
 
   // ---------- DOM yardımcıları ----------
   const $ = id => document.getElementById(id);
-  const show = id => { const el = $(id); if(el) el.style.display = ''; };
+  const show = id => { const el = $(id); if(el) el.style.display = 'block'; };
   const hide = id => { const el = $(id); if(el) el.style.display = 'none'; };
-
-  function getPool() {
-    const cat = state.category;
-    if (cat === 'all') return [...questions];
-    return questions.filter(q => q.category === cat);
-  }
 
   function shuffle(arr) {
     const a = [...arr];
@@ -50,19 +44,6 @@ const ExamApp = (() => {
     state.totalTime = MOCK_TIME;
     showQuiz();
     startTimer();
-  }
-
-  function startPractice(category) {
-    state.mode = 'practice';
-    state.category = category;
-    const filtered = category === 'all' ? questions : questions.filter(q => q.category === category);
-    state.pool = shuffle(filtered);
-    state.current = 0;
-    state.answers = new Array(state.pool.length).fill(null);
-    state.timeLeft = 0;
-    state.practiceShowAnswer = false;
-    clearTimer();
-    showQuiz();
   }
 
   // ---------- Timer ----------
@@ -108,6 +89,30 @@ const ExamApp = (() => {
     $('exam-category-tag').textContent = q.categoryName;
     $('exam-question-text').textContent = q.question;
 
+    const videoEl = $('exam-question-video');
+    if (videoEl) {
+      if (q.video) {
+        if (videoEl.getAttribute('src') !== q.video) videoEl.src = q.video;
+        videoEl.style.display = 'block';
+        videoEl.play().catch(() => {});
+      } else {
+        videoEl.pause();
+        videoEl.removeAttribute('src');
+        videoEl.style.display = 'none';
+      }
+    }
+
+    const imgEl = $('exam-question-img');
+    if (imgEl) {
+      if (q.image) {
+        imgEl.src = q.image;
+        imgEl.classList.toggle('is-scene', !!q.scene);
+        imgEl.alt = q.scene ? 'Soruya ait görsel' : 'Soruya ait trafik levhası';
+        imgEl.style.display = 'block';
+      }
+      else { imgEl.removeAttribute('src'); imgEl.style.display = 'none'; }
+    }
+
     const optsContainer = $('exam-options');
     optsContainer.innerHTML = '';
 
@@ -117,7 +122,13 @@ const ExamApp = (() => {
     q.options.forEach((opt, i) => {
       const btn = document.createElement('button');
       btn.className = 'exam-option';
-      btn.innerHTML = `<span class="opt-letter">${['A','B','C','D'][i]}</span><span class="opt-text">${opt}</span>`;
+      const letter = document.createElement('span');
+      letter.className = 'opt-letter';
+      letter.textContent = ['A','B','C','D'][i];
+      const text = document.createElement('span');
+      text.className = 'opt-text';
+      text.textContent = opt;
+      btn.append(letter, text);
 
       if (selected === i) btn.classList.add('selected');
       if (showAnswer) {
@@ -189,8 +200,14 @@ const ExamApp = (() => {
   }
 
   // ---------- Sonuçlar ----------
+  function stopVideo() {
+    const v = $('exam-question-video');
+    if (v) { v.pause(); v.removeAttribute('src'); v.style.display = 'none'; }
+  }
+
   function finishExam() {
     clearTimer();
+    stopVideo();
     hide('exam-quiz');
     show('exam-results');
 
@@ -261,6 +278,7 @@ const ExamApp = (() => {
   // ---------- Menüye Dön ----------
   function backToMenu() {
     clearTimer();
+    stopVideo();
     hide('exam-quiz');
     hide('exam-results');
     show('exam-home');
@@ -270,11 +288,6 @@ const ExamApp = (() => {
 
   // ---------- Event Listeners ----------
   function init() {
-    // Konu bazlı pratik butonları
-    document.querySelectorAll('[data-start-practice]').forEach(btn => {
-      btn.addEventListener('click', () => startPractice(btn.dataset.startPractice));
-    });
-
     // Deneme sınavı butonu
     const mockBtn = $('btn-start-mock');
     if (mockBtn) mockBtn.addEventListener('click', startMock);
@@ -294,10 +307,7 @@ const ExamApp = (() => {
     // Sonuç sayfası butonları
     const retryBtn = $('btn-retry');
     const menuBtn  = $('btn-back-menu');
-    if (retryBtn) retryBtn.addEventListener('click', () => {
-      if (state.mode === 'mock') startMock();
-      else startPractice(state.category);
-    });
+    if (retryBtn) retryBtn.addEventListener('click', startMock);
     if (menuBtn) menuBtn.addEventListener('click', backToMenu);
   }
 

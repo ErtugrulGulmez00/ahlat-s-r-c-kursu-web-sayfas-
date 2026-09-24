@@ -5,15 +5,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   initImageFallbacks();
   initNavbar();
-  initHeroParticles();
-  initCounters();
   initTestimonials();
   initFAQ();
   initGallery();
   initBackToTop();
   initContactForm();
-  initScrollAnimations();
   initMobileMenu();
+  initPlayLinks();
 });
 
 // ---------- NAVBAR ----------
@@ -76,75 +74,6 @@ function closeMenu() {
   const navMenu   = document.getElementById('nav-menu');
   if (navMenu) navMenu.classList.remove('open');
   if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); }
-}
-
-// ---------- HERO PARTİKEL EFEKTİ ----------
-function initHeroParticles() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  const particles = Array.from({ length: 45 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 0.5,
-    dx: (Math.random() - 0.5) * 0.5,
-    dy: (Math.random() - 0.5) * 0.5,
-    alpha: Math.random() * 0.5 + 0.1
-  }));
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(245,166,35,${p.alpha})`;
-      ctx.fill();
-      p.x += p.dx; p.y += p.dy;
-      if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-}
-
-// ---------- SAYAÇLAR ----------
-function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  if (!counters.length) return;
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.count, 10);
-      const suffix = el.dataset.suffix || '';
-      let current = 0;
-      const duration = 1800;
-      const start = performance.now();
-
-      function step(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        current = Math.round(eased * target);
-        el.textContent = current.toLocaleString('tr-TR') + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(el => observer.observe(el));
 }
 
 // ---------- KAYDIRMALı YORUMLAR ----------
@@ -288,21 +217,14 @@ function showFormSuccess() {
   setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
 
-// ---------- SCROLL ANİMASYONLARI ----------
-function initScrollAnimations() {
-  const els = document.querySelectorAll('[data-animate]');
-  if (!els.length) return;
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
-      }
+// ---------- PLAY STORE LİNKİ ----------
+// Uygulama henüz yayında değil; link "#" iken tıklama sayfanın başına zıplamasın.
+function initPlayLinks() {
+  document.querySelectorAll('.play-link').forEach(a => {
+    a.addEventListener('click', e => {
+      if (a.getAttribute('href') === '#') e.preventDefault();
     });
-  }, { threshold: 0.12 });
-
-  els.forEach(el => observer.observe(el));
+  });
 }
 
 // ---------- GÖRSEL FALLBACK SİSTEMİ ----------
@@ -332,14 +254,6 @@ function initImageFallbacks() {
           <div class="footer-brand-name">Özel Öz Ahlat</div>
           <div class="footer-brand-sub">Sürücü Kursu</div>
         </div>`;
-    });
-  }
-
-  // HERO TANITIM GÖRSELI
-  const heroPoster = document.querySelector('.hero-promo-img');
-  if (heroPoster) {
-    heroPoster.addEventListener('error', function() {
-      this.closest('.hero-visual').style.display = 'none';
     });
   }
 
