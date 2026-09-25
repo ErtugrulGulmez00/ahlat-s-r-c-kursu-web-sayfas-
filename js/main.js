@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initMobileMenu();
   initPlayLinks();
+  initMapTracking();
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 });
@@ -203,6 +204,22 @@ function initPlayLinks() {
     a.addEventListener('click', e => {
       if (a.getAttribute('href') === '#') e.preventDefault();
     });
+  });
+}
+
+// ---------- HARİTA ETKİLEŞİMİ (Umami) ----------
+// Google haritası başka bir siteden (iframe) geldiği için içindeki tıklamaları doğrudan göremeyiz.
+// Haritaya tıklanınca/dokununca odak iframe'e geçer ve sayfa 'blur' olur; bunu yakalayıp bir kez sayarız.
+function initMapTracking() {
+  const frame = document.querySelector('.map-wrap iframe');
+  if (!frame) return;
+  let counted = false;
+  window.addEventListener('blur', () => {
+    setTimeout(() => {
+      if (counted || document.activeElement !== frame) return;
+      counted = true;
+      if (window.umami) umami.track('harita');
+    }, 0);
   });
 }
 
