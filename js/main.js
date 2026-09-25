@@ -191,6 +191,7 @@ function initContactForm() {
     if (message) lines.push('', message);
 
     const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+    if (window.umami) umami.track('form-whatsapp', { sinif: license || 'secilmedi' });
     window.open(url, '_blank', 'noopener');
   });
 }

@@ -261,6 +261,7 @@ const ExamApp = (() => {
     const timeEl = $('result-time');
     if (timeEl) timeEl.textContent = state.mode === 'mock' ? timeUsed : 'Pratik Mod';
 
+    if (window.umami) umami.track('sinav-bitti', { puan: pct, sonuc: passed ? 'gecti' : 'kaldi' });
     animateScore(pct);
   }
 

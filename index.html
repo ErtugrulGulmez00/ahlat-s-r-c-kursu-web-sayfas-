@@ -42,11 +42,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Umami: çerezsiz ziyaretçi istatistiği; yalnızca canlı alan adında sayar -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="d7268919-b298-45bf-a15a-95220ce1ad86" data-domains="ozahlatsurucukursu.com"></script>
 </head>
 <body>
 
 <!-- ===== WhatsApp & Back To Top ===== -->
-<a href="https://wa.me/905398445913" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp ile ulaşın">
+<a data-umami-event="whatsapp" data-umami-event-yer="sabit-buton" href="https://wa.me/905398445913" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp ile ulaşın">
   <i class="fa-brands fa-whatsapp"></i>
   <span class="whatsapp-tooltip">WhatsApp'tan Ulaşın</span>
 </a>
@@ -79,7 +81,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="tel:+904344126500" class="nav-phone">
+        <a data-umami-event="telefon" data-umami-event-yer="menu" href="tel:+904344126500" class="nav-phone">
           <i class="fa-solid fa-phone"></i>
           <span class="phone-text">0434 412 65 00</span>
         </a>
@@ -102,7 +104,7 @@
         Kayıt ve bilgi için arayın ya da kursa uğrayın.
       </p>
       <div class="hero-actions">
-        <a href="tel:+904344126500" class="btn btn-secondary">
+        <a data-umami-event="telefon" data-umami-event-yer="giris" href="tel:+904344126500" class="btn btn-secondary">
           <i class="fa-solid fa-phone"></i> 0434 412 65 00
         </a>
         <a href="#sinav" class="btn btn-outline">Sınav sorularını çöz</a>
@@ -230,7 +232,7 @@
           <div><dt>Süre</dt><dd>45 dk</dd></div>
           <div><dt>Geçme</dt><dd>%70</dd></div>
         </dl>
-        <button class="btn btn-secondary" id="btn-start-mock">
+        <button data-umami-event="sinav-baslat" class="btn btn-secondary" id="btn-start-mock">
           <i class="fa-solid fa-play"></i> Sınavı başlat
         </button>
       </div>
@@ -252,7 +254,7 @@
           <p class="app-promo-note">Kursumuzun sponsorluğunda, kursiyerlerimize ücretsiz.</p>
           <!-- TODO: uygulama yayınlanınca href'i Play Store linkiyle değiştir:
                https://play.google.com/store/apps/details?id=com.ehlio.ehlio -->
-          <a href="#" class="btn btn-secondary play-link">
+          <a data-umami-event="play-store" href="#" class="btn btn-secondary play-link">
             <i class="fa-brands fa-google-play"></i> Google Play'den indir
           </a>
         </div>
@@ -378,7 +380,7 @@
       <h2 class="section-title">Kursiyerlerimiz ne diyor?</h2>
       <p class="section-desc">
         Google'daki yorumlarımızdan birkaçı.
-        <a href="https://maps.app.goo.gl/iAZyiwdhj2xTSUhC7" target="_blank" rel="noopener" class="reviews-link">Google'da 5,0 ★ · 11 yorum →</a>
+        <a data-umami-event="google-yorumlar" href="https://maps.app.goo.gl/iAZyiwdhj2xTSUhC7" target="_blank" rel="noopener" class="reviews-link">Google'da 5,0 ★ · 11 yorum →</a>
       </p>
     </div>
     <div class="reviews">
@@ -525,7 +527,7 @@
             <div>
               <div class="contact-label">Telefon</div>
               <div class="contact-value">
-                <a href="tel:+904344126500">0434 412 65 00</a>
+                <a data-umami-event="telefon" data-umami-event-yer="iletisim" href="tel:+904344126500">0434 412 65 00</a>
               </div>
             </div>
           </div>
@@ -534,7 +536,7 @@
             <div>
               <div class="contact-label">WhatsApp</div>
               <div class="contact-value">
-                <a href="https://wa.me/905398445913" target="_blank" rel="noopener">0539 844 59 13</a>
+                <a data-umami-event="whatsapp" data-umami-event-yer="iletisim" href="https://wa.me/905398445913" target="_blank" rel="noopener">0539 844 59 13</a>
               </div>
             </div>
           </div>
@@ -554,10 +556,10 @@
                   <a href="https://www.instagram.com/ozelozahlatsurucukursu/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                   </a>
-                  <a href="https://wa.me/905398445913" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+                  <a data-umami-event="whatsapp" data-umami-event-yer="iletisim-simge" href="https://wa.me/905398445913" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
                   </a>
-                  <a href="tel:+904344126500" class="social-link" aria-label="Telefon">
+                  <a data-umami-event="telefon" data-umami-event-yer="iletisim-simge" href="tel:+904344126500" class="social-link" aria-label="Telefon">
                     <i class="fa-solid fa-phone"></i>
                   </a>
                 </div>
@@ -575,7 +577,7 @@
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
-        <a href="https://maps.app.goo.gl/iAZyiwdhj2xTSUhC7" target="_blank" rel="noopener" class="map-link">
+        <a data-umami-event="yol-tarifi" href="https://maps.app.goo.gl/iAZyiwdhj2xTSUhC7" target="_blank" rel="noopener" class="map-link">
           <i class="fa-solid fa-diamond-turn-right"></i> Google Haritalar'da yol tarifi al
         </a>
       </div>
@@ -645,10 +647,10 @@
           <a href="https://www.instagram.com/ozelozahlatsurucukursu/" target="_blank" rel="noopener" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://wa.me/905398445913" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a data-umami-event="whatsapp" data-umami-event-yer="footer" href="https://wa.me/905398445913" target="_blank" rel="noopener" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
           </a>
-          <a href="tel:+904344126500" aria-label="Telefon">
+          <a data-umami-event="telefon" data-umami-event-yer="footer-simge" href="tel:+904344126500" aria-label="Telefon">
             <i class="fa-solid fa-phone"></i>
           </a>
         </div>
@@ -685,7 +687,7 @@
           </div>
           <div class="footer-contact-item">
             <i class="fa-solid fa-phone"></i>
-            <a href="tel:+904344126500" style="color:inherit">0434 412 65 00</a>
+            <a data-umami-event="telefon" data-umami-event-yer="footer" href="tel:+904344126500" style="color:inherit">0434 412 65 00</a>
           </div>
           <div class="footer-contact-item">
             <i class="fa-solid fa-clock"></i>
