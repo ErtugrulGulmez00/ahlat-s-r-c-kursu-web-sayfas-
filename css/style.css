@@ -585,6 +585,24 @@ ul { list-style: none; }
 #lightbox-caption { color: rgba(255,255,255,.7); font-size: .9rem; }
 
 /* ============================================================
+   YORUMLAR
+   ============================================================ */
+.reviews-link { display: inline-block; margin-top: .4rem; padding: .3rem 0; font-weight: 700; color: var(--secondary); }
+.reviews-link:hover { color: var(--secondary-dark); }
+.reviews { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.review {
+  display: flex; flex-direction: column; margin: 0;
+  padding: 1.5rem; background: var(--white);
+  border: 1px solid var(--gray-light); border-top: 3px solid var(--secondary);
+  border-radius: var(--radius);
+}
+.review-stars { color: var(--secondary); letter-spacing: 2px; margin-bottom: .75rem; }
+.review blockquote { margin: 0 0 1.25rem; color: var(--dark); font-size: 1.02rem; line-height: 1.6; flex: 1; }
+.review figcaption { display: flex; flex-direction: column; font-size: .9rem; }
+.review figcaption strong { color: var(--dark); }
+.review figcaption span { color: var(--gray-mid); font-size: .82rem; }
+
+/* ============================================================
    SSS
    ============================================================ */
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: .75rem; }
@@ -782,6 +800,7 @@ ul { list-style: none; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
+  .reviews { grid-template-columns: 1fr 1fr; }
   .exam-start { grid-template-columns: 1fr; gap: 1.5rem; }
   .app-promo { grid-template-columns: 1fr 200px; gap: 2rem; }
   .process-list, .reasons { grid-template-columns: 1fr 1fr; }
@@ -840,6 +859,7 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
+  .reviews { grid-template-columns: 1fr; }
   .process-list, .reasons { grid-template-columns: 1fr; }
   .class-table th:nth-child(4), .class-table td:nth-child(4) { display: none; }
   .class-table td { padding: .9rem .75rem; font-size: .95rem; }
