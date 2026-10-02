@@ -107,23 +107,28 @@ function initGallery() {
   const closeBtn= document.getElementById('lightbox-close');
   if (!overlay) return;
 
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const src  = item.dataset.src  || '';
-      const cap  = item.dataset.caption || '';
-      if (!src) {
-        // Gerçek fotoğraf yoksa sadece başlık göster
-        img.style.display = 'none';
-        caption.textContent = cap + ' (Fotoğraf yakında eklenecek)';
-      } else {
-        img.style.display = '';
-        img.src = src;
-        caption.textContent = cap;
-      }
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  const items = [...document.querySelectorAll('.gallery-item')];
+  let current = 0;
+
+  function show(i) {
+    current = (i + items.length) % items.length;
+    const item = items[current];
+    img.src = item.dataset.src || '';
+    img.style.display = item.dataset.src ? '' : 'none';
+    caption.textContent = item.dataset.caption || '';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  items.forEach((item, i) => item.addEventListener('click', () => show(i)));
+
+  const openBtn = document.getElementById('gallery-open');
+  if (openBtn && items.length) openBtn.addEventListener('click', () => show(0));
+
+  const prev = document.getElementById('lightbox-prev');
+  const next = document.getElementById('lightbox-next');
+  if (prev) prev.addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+  if (next) next.addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
 
   function closeLightbox() {
     overlay.classList.remove('active');
@@ -134,7 +139,12 @@ function initGallery() {
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
 }
 
 // ---------- YUKARI GİT BUTONU ----------

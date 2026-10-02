@@ -179,7 +179,7 @@ ul { list-style: none; }
   background-color: var(--dark);
 }
 
-.hero-content { position: relative; max-width: 620px; }
+.hero-content { position: relative; max-width: 760px; }
 
 .hero-kicker {
   color: rgba(255,255,255,.75);
@@ -202,6 +202,7 @@ ul { list-style: none; }
   margin-bottom: 2rem;
 }
 
+.hero-classes { color: var(--white); font-weight: 700; margin: -1rem 0 2rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 .hero-actions .btn-secondary { font-size: 1.1rem; }
 
@@ -256,7 +257,7 @@ ul { list-style: none; }
   box-shadow: var(--shadow-lg);
   text-align: center;
 }
-.about-badge-num  { font-family: var(--font-head); font-size: 2rem; font-weight: 900; color: var(--white); }
+.about-badge-num  { font-family: var(--font-head); font-size: 2.4rem; line-height: 1; font-weight: 900; color: var(--white); }
 .about-badge-text { font-size: .8rem; font-weight: 700; color: var(--white); }
 
 .about-text p { color: var(--gray-mid); margin-bottom: 1.25rem; }
@@ -271,24 +272,17 @@ ul { list-style: none; }
 /* ============================================================
    EHLİYET SINIFLARI
    ============================================================ */
-.class-table-wrap { overflow-x: auto; }
-.class-table {
-  width: 100%; border-collapse: collapse;
-  background: var(--white);
-  border: 1px solid var(--gray-light);
+.class-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.class-card {
+  display: flex; flex-direction: column;
+  background: var(--white); border: 1px solid var(--gray-light);
+  border-radius: var(--radius); padding: 1.5rem;
 }
-.class-table th {
-  text-align: left; padding: .9rem 1.25rem;
-  font-size: .8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-  color: var(--gray-mid); border-bottom: 2px solid var(--dark);
-}
-.class-table td {
-  padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--gray-light);
-  color: var(--dark); font-size: 1.05rem; vertical-align: middle;
-}
-.class-table tr:last-child td { border-bottom: 0; }
-.class-table td:nth-child(3) { font-weight: 700; }
-.class-table td:nth-child(4) { color: var(--gray-mid); }
+.class-card .class-code { align-self: flex-start; margin-bottom: 1rem; }
+.class-card-title { font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; color: var(--dark); line-height: 1.1; }
+.class-card-sub { color: var(--secondary); font-weight: 700; margin-bottom: .6rem; }
+.class-card-desc { color: var(--gray-mid); font-size: .95rem; }
+.section-cta { margin-top: 2rem; }
 .class-code {
   display: inline-block; min-width: 3.2rem; text-align: center;
   font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; line-height: 1;
@@ -320,6 +314,7 @@ ul { list-style: none; }
 /* ============================================================
    NEDEN BİZ
    ============================================================ */
+.reasons-lead { font-size: 1.15rem; font-weight: 600; color: var(--dark); max-width: 760px; margin: -1.25rem 0 1.75rem; }
 .reasons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
 .reason { padding: 1.5rem 0; border-top: 1px solid var(--gray-light); }
 .reason h4 { font-family: var(--font-head); font-weight: 700; font-size: 1.35rem; color: var(--dark); margin-bottom: .35rem; }
@@ -355,10 +350,12 @@ ul { list-style: none; }
 .app-promo-brand img { width: 48px; height: 48px; border-radius: 12px; }
 .app-promo-brand span { font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; color: var(--white); }
 .app-promo-title { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--white); line-height: 1.1; margin-bottom: 1rem; }
-.app-promo-list { display: grid; gap: .4rem; margin-bottom: 1rem; }
-.app-promo-list li { color: rgba(255,255,255,.8); padding-left: 1.2rem; position: relative; }
-.app-promo-list li::before { content: ''; position: absolute; left: 0; top: .7em; width: 6px; height: 6px; background: var(--secondary-light); border-radius: 50%; }
-.app-promo-note { color: rgba(255,255,255,.55); font-size: .9rem; margin-bottom: 1.5rem; }
+.app-promo-p { color: rgba(255,255,255,.78); margin-bottom: .75rem; }
+.app-promo-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 1.5rem; }
+.app-promo-chips li {
+  font-size: .85rem; font-weight: 700; color: var(--white);
+  padding: .35rem .8rem; border: 1px solid rgba(255,255,255,.25); border-radius: 999px;
+}
 .app-promo-shot { width: 100%; height: auto; align-self: end; border-radius: 12px 12px 0 0; }
 
 /* Quiz Arayüzü */
@@ -582,6 +579,15 @@ ul { list-style: none; }
 }
 #lightbox-close:hover { background: var(--danger); }
 #lightbox-img { max-width: 90vw; max-height: 80vh; border-radius: var(--radius); }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,.12); color: var(--white); font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,.25); }
+#lightbox-prev { left: 1rem; }
+#lightbox-next { right: 1rem; }
 #lightbox-caption { color: rgba(255,255,255,.7); font-size: .9rem; }
 
 /* ============================================================
@@ -601,6 +607,34 @@ ul { list-style: none; }
 .review figcaption { display: flex; flex-direction: column; font-size: .9rem; }
 .review figcaption strong { color: var(--dark); }
 .review figcaption span { color: var(--gray-mid); font-size: .82rem; }
+
+/* ============================================================
+   KAYIT ÇAĞRISI + EVRAKLAR
+   ============================================================ */
+.cta-section { background: var(--secondary); color: var(--white); }
+.cta-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center; }
+.cta-text .section-title { color: var(--white); margin-bottom: 1rem; }
+.cta-text p { color: rgba(255,255,255,.9); margin-bottom: .9rem; max-width: 560px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.btn-light { background: var(--white); color: var(--secondary-dark); }
+.btn-light:hover { background: #f3f3f3; }
+.cta-section .btn-outline { border-color: rgba(255,255,255,.85); }
+.docs-card { background: var(--white); color: var(--dark); border-radius: var(--radius-lg); padding: 2rem; }
+.docs-title { font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; line-height: 1.1; margin-bottom: 1.25rem; }
+.docs-list { display: grid; gap: .25rem; margin-bottom: 1.25rem; }
+.docs-list li {
+  display: flex; align-items: center; gap: .9rem;
+  padding: .8rem 0; border-bottom: 1px solid var(--gray-light);
+  font-weight: 600; font-size: 1.05rem;
+}
+.docs-list li:last-child { border-bottom: 0; }
+.docs-list i {
+  width: 40px; height: 40px; flex-shrink: 0; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(215,38,30,.1); color: var(--secondary);
+}
+.docs-note { color: var(--gray-mid); font-size: .88rem; line-height: 1.6; }
+.process-list p a { color: var(--secondary-light); text-decoration: underline; }
 
 /* ============================================================
    SSS
@@ -662,6 +696,7 @@ ul { list-style: none; }
   border: 1px solid var(--gray-light);
 }
 .map-wrap iframe { display: block; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
 .map-link {
   display: inline-flex; align-items: center; gap: .5rem;
   margin-top: .75rem; padding: .5rem 0;
@@ -719,6 +754,8 @@ ul { list-style: none; }
   height: 64px; width: auto;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,.5));
 }
+.footer-name { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; color: var(--white); margin-bottom: .4rem; }
+.footer-tagline { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.8); line-height: 1.7; margin-bottom: 1.25rem; }
 .footer-about { font-size: .9rem; line-height: 1.8; margin-bottom: 1.5rem; }
 .footer-social { display: flex; gap: .6rem; }
 .footer-social a {
@@ -800,6 +837,8 @@ ul { list-style: none; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
+  .class-cards { grid-template-columns: 1fr 1fr; }
+  .cta-grid { grid-template-columns: 1fr; gap: 2rem; }
   .reviews { grid-template-columns: 1fr 1fr; }
   .exam-start { grid-template-columns: 1fr; gap: 1.5rem; }
   .app-promo { grid-template-columns: 1fr 200px; gap: 2rem; }
@@ -859,10 +898,10 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
+  .class-cards { grid-template-columns: 1fr; }
+  .docs-card { padding: 1.5rem; }
   .reviews { grid-template-columns: 1fr; }
   .process-list, .reasons { grid-template-columns: 1fr; }
-  .class-table th:nth-child(4), .class-table td:nth-child(4) { display: none; }
-  .class-table td { padding: .9rem .75rem; font-size: .95rem; }
   .hero-title { font-size: 2rem; }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item:nth-child(1),
