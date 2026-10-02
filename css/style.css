@@ -752,7 +752,6 @@ ul { list-style: none; }
 .footer-logo-wrap { margin-bottom: 1rem; }
 .footer-logo-img {
   height: 64px; width: auto;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.5));
 }
 .footer-name { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; color: var(--white); margin-bottom: .4rem; }
 .footer-tagline { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.8); line-height: 1.7; margin-bottom: 1.25rem; }
