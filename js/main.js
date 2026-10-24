@@ -159,7 +159,7 @@ function initBackToTop() {
 
 // ---------- İLETİŞİM FORMU ----------
 // Form bir sunucuya gitmez; doldurulan bilgilerle WhatsApp'ta hazır bir mesaj açar.
-const WHATSAPP_NUMBER = '905398445913';
+const WHATSAPP_NUMBER = '904344126500';
 
 function initContactForm() {
   const form = document.getElementById('contact-form');
